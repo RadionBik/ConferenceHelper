@@ -67,12 +67,11 @@ def main():
         seen_articles.add(article_name)
          
          
-        article_folder = get_folder_path_from_cell(ws.cell, index)
-        print(f'\nСкачиваем файлы в папку: {article_folder}:')
-        
+        article_folder = get_folder_path_from_cell(ws.cell, index)        
         if os.path.exists(article_folder):
             continue
 
+        print(f'\nСкачиваем файлы в папку: {article_folder}:')
         os.makedirs(article_folder)
             
         for link_column in [14, 15, 16, 18, 19]:
